@@ -1,4 +1,4 @@
-# Legal Masr — Astro migration
+# legal-masr-marketing
 
 This project is an intermediate Astro migration of the existing Legal Masr landing page. Astro owns the public page routes; the existing React app is server-rendered into HTML and hydrated on the client to preserve its current interactions. The existing React components, CSS, assets, translations, and animation code have been retained.
 
@@ -29,4 +29,3 @@ npm run preview
 - The Feedback route remains disabled as in the source project.
 - `package.json` pins the Vite major version to 7 through npm overrides because Astro 6 requires Vite 7. Reinstall dependencies after extracting this archive.
 - Verify the visual design and all interactions in a local browser before deploying.
-# legal-masr-markting

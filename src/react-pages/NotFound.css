@@ -1,0 +1,103 @@
+.nf {
+  --nf-border: color-mix(in srgb, currentColor 14%, transparent);
+  --nf-muted: color-mix(in srgb, currentColor 62%, transparent);
+  --nf-soft: color-mix(in srgb, currentColor 5%, transparent);
+
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+}
+
+.nf-card {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.nf-code {
+  font-size: clamp(5rem, 22vw, 9rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  direction: ltr;
+  color: var(--card-foreground);
+  user-select: none;
+}
+
+.nf-card h1 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.nf-text {
+  max-width: 44ch;
+  margin: 0;
+  line-height: 1.7;
+  color: var(--nf-muted);
+}
+
+.nf-path {
+  max-width: 100%;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  color: var(--nf-muted);
+  background: var(--nf-soft);
+  border: 1px solid var(--nf-border);
+  border-radius: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.nf-actions a,
+.nf-report {
+  text-decoration: none;
+}
+
+.nf-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nf-report {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 0.88rem;
+  color: var(--nf-muted);
+  transition: color 0.15s;
+}
+
+.nf-report:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* point the back arrow in the reading direction */
+[dir="rtl"] .nf-back-icon {
+  transform: scaleX(-1);
+}
+
+@media (max-width: 480px) {
+  .nf-actions {
+    flex-direction: column;
+    align-self: stretch;
+  }
+}

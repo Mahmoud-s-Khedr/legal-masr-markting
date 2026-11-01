@@ -1,0 +1,137 @@
+.fb {
+  --fb-border: color-mix(in srgb, currentColor 14%, transparent);
+  --fb-muted: color-mix(in srgb, currentColor 62%, transparent);
+  --fb-soft: color-mix(in srgb, currentColor 5%, transparent);
+
+  /* Google Forms can't auto-resize inside an iframe, so set the height
+     to fit your form (mobile is taller because the form wraps more). */
+  --fb-form-height: 1400px;
+
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 20px 96px;
+}
+
+/* ---------- hero ---------- */
+.fb-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px 0 32px;
+  border-bottom: 1px solid var(--fb-border);
+}
+
+.fb-hero a {
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 5px;
+}
+
+.fb-hero h1 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.fb-hero__subtitle {
+  max-width: 62ch;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--fb-muted);
+  margin: 0;
+}
+
+/* ---------- embedded form ---------- */
+.fb-main {
+  padding-top: 32px;
+  min-width: 0;
+}
+
+.fb-embed {
+  position: relative;
+  width: 100%;
+  height: var(--fb-form-height);
+  border: 1px solid var(--fb-border);
+  border-radius: 14px;
+  background: var(--fb-soft);
+  overflow: hidden;
+}
+
+/* The loader sits behind the iframe. Google's page is opaque, so it
+   covers the loader automatically once it has loaded. */
+.fb-embed__loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding-top: 96px;
+  font-size: 0.9rem;
+  color: var(--fb-muted);
+}
+
+.fb-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--fb-border);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: fb-spin 0.8s linear infinite;
+}
+
+@keyframes fb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fb-embed__frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* fallback link */
+.fb-fallback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 16px 0 0;
+  font-size: 0.88rem;
+  color: var(--fb-muted);
+}
+
+.fb-fallback a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.fb-fallback a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 640px) {
+  .fb {
+    --fb-form-height: 1800px;
+    padding: 24px 12px 72px;
+  }
+
+  .fb-embed {
+    border-radius: 10px;
+  }
+}

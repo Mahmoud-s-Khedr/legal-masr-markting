@@ -1,0 +1,136 @@
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-bg__canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  /* fade the graph out toward the edges so it never fights the text */
+  -webkit-mask-image: radial-gradient(
+    ellipse 90% 80% at 50% 45%,
+    #000 35%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 90% 80% at 50% 45%,
+    #000 35%,
+    transparent 100%
+  );
+}
+
+/* soft drifting colour blobs */
+.hero-bg__aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.35;
+  will-change: transform;
+}
+
+.hero-bg__aurora--one {
+  width: 38vw;
+  height: 38vw;
+  min-width: 320px;
+  min-height: 320px;
+  top: -12%;
+  inset-inline-start: -8%;
+  background: radial-gradient(
+    circle,
+    hsl(var(--primary, 221 83% 53%)) 0%,
+    transparent 70%
+  );
+  animation: hero-bg-drift-a 22s ease-in-out infinite alternate;
+}
+
+.hero-bg__aurora--two {
+  width: 34vw;
+  height: 34vw;
+  min-width: 280px;
+  min-height: 280px;
+  bottom: -18%;
+  inset-inline-end: -6%;
+  background: radial-gradient(circle, hsl(168 70% 45%) 0%, transparent 70%);
+  animation: hero-bg-drift-b 26s ease-in-out infinite alternate;
+}
+
+.hero-bg__aurora--three {
+  width: 24vw;
+  height: 24vw;
+  min-width: 220px;
+  min-height: 220px;
+  top: 30%;
+  inset-inline-start: 42%;
+  background: radial-gradient(circle, hsl(265 80% 62%) 0%, transparent 70%);
+  opacity: 0.22;
+  animation: hero-bg-drift-c 30s ease-in-out infinite alternate;
+}
+
+/* blend the bottom into the next section */
+.hero-bg__fade {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 30%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    hsl(var(--background, 0 0% 100%))
+  );
+}
+
+@keyframes hero-bg-drift-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(8vw, 6vh, 0) scale(1.15);
+  }
+}
+
+@keyframes hero-bg-drift-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.1);
+  }
+  to {
+    transform: translate3d(-7vw, -8vh, 0) scale(0.95);
+  }
+}
+
+@keyframes hero-bg-drift-c {
+  from {
+    transform: translate3d(-4vw, 3vh, 0) scale(0.9);
+  }
+  to {
+    transform: translate3d(5vw, -5vh, 0) scale(1.2);
+  }
+}
+
+/* make sure hero content sits above the background */
+.home-hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.home-hero__grid,
+.home-hero__strip {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg__aurora {
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-bg__aurora {
+    filter: blur(50px);
+    opacity: 0.28;
+  }
+}

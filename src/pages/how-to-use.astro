@@ -1,0 +1,26 @@
+---
+import App from "../App.jsx";
+import "../index.css";
+const location = Astro.url.pathname;
+const title = "طريقة استخدام ليجال مصر | دليل الاستخدام";
+const description = "تعرّف على طريقة استخدام ليجال مصر لتنظيم المراجع والملاحظات القانونية والعمل مع المصادر.";
+---
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#064e3f" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow" />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Legal Masr" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+  </head>
+  <body>
+    <App location={location} client:load />
+  </body>
+</html>

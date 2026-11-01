@@ -1,0 +1,117 @@
+.site-footer {
+  background: var(--color-surface);
+  border-block-start: 1px solid var(--color-border);
+  margin-block-start: 5rem;
+}
+
+.site-footer__inner {
+  width: min(1440px, calc(100% - 64px));
+  margin-inline: auto;
+
+  padding: 3rem 0 1.5rem;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: clamp(2rem, 5vw, 6rem);
+}
+
+.site-footer__brand {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+}
+
+.site-footer__about p {
+  color: var(--color-text-muted);
+  max-width: 38ch;
+  margin: 0.5rem 0 0;
+}
+
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.site-footer__col h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+}
+
+.site-footer__col a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.93rem;
+  transition: color 0.2s ease;
+}
+
+.site-footer__col a:hover {
+  color: var(--color-brand);
+}
+
+.site-footer__legal {
+  width: min(1440px, calc(100% - 64px));
+  margin-inline: auto;
+
+  padding: 1rem 0 2rem;
+
+  border-block-start: 1px solid var(--color-border);
+
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.site-footer__about-cont {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-footer__about img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 1200px) {
+  .site-footer__inner,
+  .site-footer__legal {
+    width: calc(100% - 48px);
+  }
+}
+
+/* =========================
+   Small Tablet
+========================= */
+
+@media (max-width: 900px) {
+  .site-footer__inner {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 700px) {
+  .site-footer__inner {
+    width: calc(100% - 28px);
+
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+
+    padding: 2.5rem 0 1.5rem;
+  }
+
+  .site-footer__legal {
+    width: calc(100% - 28px);
+    padding: 1rem 0 1.5rem;
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "back": "Back to home",
+    "badge": "Download",
+    "title": "Download Legal Masr",
+    "subtitle": "Choose the version that matches your operating system. All downloads are free.",
+    "version": "Version {{version}}",
+    "released": "Released {{date}}"
+  },
+  "actions": {
+    "download": "Download",
+    "recommended": "Recommended for your device",
+    "all": "All downloads",
+    "copy": "Copy command",
+    "copied": "Copied",
+    "mobile": "Legal Masr is a desktop app. Open this page on your computer to download it."
+  },
+  "groups": {
+    "windows": {
+      "title": "Windows",
+      "desc": "Installer and portable version for Windows.",
+      "note": "If Windows SmartScreen shows a warning, click “More info” and then “Run anyway”."
+    },
+    "linux": {
+      "title": "Linux",
+      "desc": "Packages for Debian-based and Red Hat-based distributions, plus a universal AppImage.",
+      "note": "After downloading, open a terminal in the folder that contains the file and run the command shown on the card."
+    },
+    "macos": {
+      "title": "macOS",
+      "desc": "Disk image for Mac computers."
+    }
+  },
+  "items": {
+    "windows-installer": {
+      "name": "Windows installer (.exe)",
+      "desc": "The recommended option. Installs the app and adds a Start menu shortcut."
+    },
+    "windows-portable": {
+      "name": "Portable version (.zip)",
+      "desc": "No installation needed. Extract the folder and run the app from anywhere."
+    },
+    "linux-deb": {
+      "name": "Debian / Ubuntu (.deb)",
+      "desc": "For Debian, Ubuntu, Linux Mint and similar distributions."
+    },
+    "linux-rpm": {
+      "name": "Fedora / openSUSE (.rpm)",
+      "desc": "For Fedora, openSUSE, RHEL and similar distributions."
+    },
+    "linux-appimage": {
+      "name": "Universal (AppImage)",
+      "desc": "Works on most distributions without installing. Make it executable and run it."
+    },
+    "macos-dmg": {
+      "name": "macOS (.dmg)",
+      "desc": "Open the disk image and drag the app to your Applications folder."
+    }
+  },
+  "help": {
+    "text": "Having trouble downloading or installing?",
+    "link": "Let us know"
+  }
+}

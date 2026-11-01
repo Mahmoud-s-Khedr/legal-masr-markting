@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Montserrat:wght@100..900&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-heading);
+  --font-sans: var(--font-body);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* =========================================================
+   LIGHT THEME  (Legal Masr style: deep green + warm cream)
+   ========================================================= */
+
+:root {
+  /* Fonts */
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+
+  /* Base */
+  --background: #f7f4ee; /* warm cream page background */
+  --foreground: #14201d; /* near-black with a green tint */
+
+  /* Surfaces */
+  --card: #ffffff;
+  --card-foreground: #14201d;
+
+  --popover: #ffffff;
+  --popover-foreground: #14201d;
+
+  /* Brand */
+  --primary: #064e3f; /* deep forest green (buttons, active) */
+  --primary-foreground: #ffffff;
+
+  /* Secondary */
+  --secondary: #dcebe8; /* pale green-teal (active nav pill) */
+  --secondary-foreground: #064e3f;
+
+  /* Muted */
+  --muted: #efebe3; /* soft beige */
+  --muted-foreground: #6b7773;
+
+  /* Accent */
+  --accent: #dcebe8;
+  --accent-foreground: #064e3f;
+
+  /* Status */
+  --destructive: #c0392b; /* red used for restore button */
+  --destructive-foreground: #ffffff;
+
+  /* Borders / inputs */
+  --border: #e3e0d8;
+  --input: #dcd9d0;
+  --ring: #0a6b57;
+
+  /* Charts */
+  --chart-1: #064e3f;
+  --chart-2: #0a6b57;
+  --chart-3: #2f9e84;
+  --chart-4: #7cc5b0;
+  --chart-5: #c9a24a; /* warm gold, matches the logo / warning banner */
+
+  /* Radius */
+  --radius: 12px;
+
+  /* Sidebar */
+  --sidebar: #fbfaf7;
+  --sidebar-foreground: #14201d;
+  --sidebar-primary: #064e3f;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #dcebe8;
+  --sidebar-accent-foreground: #064e3f;
+  --sidebar-border: #e3e0d8;
+  --sidebar-ring: #0a6b57;
+
+  /* =======================================================
+     Legacy aliases
+     ======================================================= */
+
+  --color-bg: var(--background);
+  --color-surface: var(--card);
+  --color-surface-alt: var(--muted);
+
+  --color-text: var(--foreground);
+  --color-text-muted: var(--muted-foreground);
+
+  --color-border: var(--border);
+
+  --color-brand: var(--primary);
+  --color-brand-hover: #043a30;
+  --color-on-brand: var(--primary-foreground);
+
+  --color-accent: #2f9e84;
+  --color-accent-soft: var(--accent);
+
+  --color-focus: var(--ring);
+
+  --color-shadow: rgba(6, 78, 63, 0.08);
+
+  /* Extra: warning banner (yellow box in the backup page) */
+  --warning-bg: #fdf3dc;
+  --warning-border: #ecd9a0;
+  --warning-foreground: #5c4510;
+
+  /* Extra: success (green dot / check) */
+  --success: #2f9e6a;
+  --success-soft: #e6f4ec;
+
+  color-scheme: light;
+}
+
+/* =========================================================
+   DARK THEME  (deep pine + warm charcoal)
+   ========================================================= */
+
+.dark {
+  --background: #0d1513;
+  --foreground: #eaf1ee;
+
+  --card: #14201d;
+  --card-foreground: #eaf1ee;
+
+  --popover: #14201d;
+  --popover-foreground: #eaf1ee;
+
+  --primary: #3fbf9f; /* brighter green so it pops on dark */
+  --primary-foreground: #04231c;
+
+  --secondary: #1b2e29;
+  --secondary-foreground: #bfe6da;
+
+  --muted: #1a2724;
+  --muted-foreground: #96a8a3;
+
+  --accent: #1b3a32;
+  --accent-foreground: #bfe6da;
+
+  --destructive: #e5584a;
+  --destructive-foreground: #ffffff;
+
+  --border: #263632;
+  --input: #2e403b;
+  --ring: #3fbf9f;
+
+  --chart-1: #3fbf9f;
+  --chart-2: #2f9e84;
+  --chart-3: #7cc5b0;
+  --chart-4: #b4e0d3;
+  --chart-5: #d9b45a;
+
+  --sidebar: #101a18;
+  --sidebar-foreground: #eaf1ee;
+  --sidebar-primary: #3fbf9f;
+  --sidebar-primary-foreground: #04231c;
+  --sidebar-accent: #1b3a32;
+  --sidebar-accent-foreground: #bfe6da;
+  --sidebar-border: #263632;
+  --sidebar-ring: #3fbf9f;
+
+  /* Legacy aliases */
+  --color-bg: var(--background);
+  --color-surface: var(--card);
+  --color-surface-alt: var(--muted);
+
+  --color-text: var(--foreground);
+  --color-text-muted: var(--muted-foreground);
+
+  --color-border: var(--border);
+
+  --color-brand: var(--primary);
+  --color-brand-hover: #66d4b8;
+  --color-on-brand: var(--primary-foreground);
+
+  --color-accent: #2f9e84;
+  --color-accent-soft: var(--accent);
+
+  --color-focus: var(--ring);
+
+  --color-shadow: rgba(0, 0, 0, 0.5);
+
+  /* Extras */
+  --warning-bg: #2a2412;
+  --warning-border: #5a4a1c;
+  --warning-foreground: #f0dca0;
+
+  --success: #4cc790;
+  --success-soft: #16302a;
+
+  color-scheme: dark;
+}
+
+/* =========================================================
+   ARABIC FONT
+   ========================================================= */
+
+:root[lang="ar"] {
+  --font-heading: "Cairo", sans-serif;
+  --font-body: "Cairo", sans-serif;
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    font-family: var(--font-body);
+    line-height: 1.6;
+  }
+
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

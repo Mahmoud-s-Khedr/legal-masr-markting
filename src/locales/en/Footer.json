@@ -1,0 +1,20 @@
+{
+  "brand": "Legal Masr",
+  "tagline": "A private desktop workspace for lawyers to read sources, capture evidence, and build legal arguments.",
+
+  "product": {
+    "title": "Product",
+    "features": "Features",
+    "guide": "How it works",
+    "download": "Download"
+  },
+
+  "company": {
+    "title": "More",
+    "saas": "Cloud version · Q1 2027",
+    "privacy": "Privacy",
+    "contact": "Contact us"
+  },
+
+  "rights": "All rights reserved."
+}

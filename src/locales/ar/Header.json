@@ -1,0 +1,18 @@
+{
+  "brand": "ليجال مصر",
+  "navLabel": "التنقل الرئيسي",
+  "nav": {
+    "download": "تحميل",
+    "how-to-use": "كيفية الاستخدام",
+    "feedback": "ملاحظات"
+  },
+  "download": "تحميل",
+  "menu": "القائمة",
+  "theme": {
+    "label": "المظهر",
+    "system": "النظام",
+    "light": "فاتح",
+    "dark": "داكن"
+  },
+  "language": { "label": "تغيير اللغة", "other": "English" }
+}

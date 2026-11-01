@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "back": "Back to home",
+    "badge": "Feedback",
+    "title": "Send us your feedback",
+    "subtitle": "Found a bug, have an idea, or just want to tell us what you think? Fill in the form below. We read every message and use it to make the app better."
+  },
+  "form": {
+    "title": "Feedback form",
+    "loading": "Loading the form...",
+    "fallback": "Form not loading?",
+    "open": "Open it in a new tab"
+  }
+}

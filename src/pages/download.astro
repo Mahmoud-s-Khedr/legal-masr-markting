@@ -1,0 +1,26 @@
+---
+import App from "../App.jsx";
+import "../index.css";
+const location = Astro.url.pathname;
+const title = "تحميل ليجال مصر | النسخ المتاحة لويندوز ولينكس وماك";
+const description = "حمّل تطبيق ليجال مصر لنظام ويندوز أو لينكس (deb وrpm وAppImage) أو ماك، واختر النسخة المناسبة لجهازك.";
+---
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#064e3f" />
+<meta name="description" content={description} />
+<meta name="robots" content="index,follow" />
+<title>{title}</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Legal Masr" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+</head>
+<body>
+<App location={location} client:load />
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "brand": "Legal Masr",
+  "navLabel": "Main navigation",
+  "nav": {
+    "download": "download",
+    "how-to-use": "How it works",
+    "feedback": "Feedback"
+  },
+  "download": "Download",
+  "menu": "Menu",
+  "theme": {
+    "label": "Theme",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": { "label": "Change language", "other": "العربية" }
+}

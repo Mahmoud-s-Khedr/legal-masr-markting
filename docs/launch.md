@@ -86,6 +86,11 @@ Audience: individual Egyptian lawyers using one computer. Free, no subscription,
 no mandatory account, Arabic-first, core work offline. Highlight cases, hearings,
 clients, powers of attorney, fees/expenses, managed documents and manual backups.
 
+Keep the public download flow simple: choose a package, download and install.
+Do not ask end users to check SHA hashes or checksums. Release integrity
+verification belongs to the maintainer publishing workflow only. The former
+pre-release acceptance and checksum callouts are removed from the download page.
+
 The site discloses unsigned packages, manual updates and unencrypted exports.
 It does not claim completed physical-platform or cross-device restore acceptance.
 The support page explains browser preferences, hosting connection metadata and

@@ -19,7 +19,7 @@
     "windows": {
       "title": "Windows",
       "desc": "Windows 10/11 on x64 computers.",
-      "note": "Windows executables are unsigned and may show SmartScreen or unknown-publisher warnings. Check the source and checksum before deciding whether to run the file."
+      "note": "Windows may show a SmartScreen or unknown-publisher warning because this beta is unsigned."
     },
     "linux": {
       "title": "Linux",
@@ -52,12 +52,5 @@
   "help": {
     "text": "Having trouble downloading or installing?",
     "link": "Let us know"
-  },
-  "beta": {
-    "title": "Before trying the beta",
-    "text": "Physical Windows/Linux install, update, removal, tray behavior and cross-device restore checks remain unverified, as does privacy/legal acceptance. Start with sample data and keep a separate backup. Exports are unencrypted. Updates are manual.",
-    "notes": "Read the release notes",
-    "checksums": "Download SHA256SUMS.txt",
-    "verify": "Compare the downloaded file’s SHA-256 hash with SHA256SUMS.txt. If it differs, do not run the file; download it again from the official source."
   }
 }

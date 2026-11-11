@@ -13,10 +13,9 @@
       "title": "Download and install",
       "steps": [
         "Choose the Windows 10/11 x64 installer or a Linux x64 package from Downloads. macOS and mobile packages are not included.",
-        "Compare the file’s SHA-256 hash with SHA256SUMS.txt before running it. Do not run a file whose hash differs.",
         "Windows: run the installer, or extract the portable ZIP before opening the app. Linux: use the command shown beside your package."
       ],
-      "callout": "Packages are unsigned. Windows may show a SmartScreen or unknown-publisher warning. Review the source and checksum before deciding to run the app. Installation, update and removal checks on physical target devices remain unverified."
+      "callout": "This beta is unsigned. Windows may show a SmartScreen or unknown-publisher warning."
     },
     {
       "id": "setup",

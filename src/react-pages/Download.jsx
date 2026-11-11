@@ -134,21 +134,6 @@ export default function Download() {
       </header>
 
       <div className="dl-main">
-        <section className="dl-callout" aria-labelledby="beta-title">
-          <Info size={16} />
-          <div>
-            <h2 id="beta-title">{t("beta.title")}</h2>
-            <p>{t("beta.text")}</p>
-            <a href={release.releaseUrl}>{t("beta.notes")}</a>
-          </div>
-        </section>
-        <section className="dl-callout">
-          <Info size={16} />
-          <div>
-            <a href={fileUrl("SHA256SUMS.txt")}>{t("beta.checksums")}</a>
-            <p>{t("beta.verify")}</p>
-          </div>
-        </section>
         {detected === "mobile" && (
           <div className="dl-callout">
             <Info size={16} />

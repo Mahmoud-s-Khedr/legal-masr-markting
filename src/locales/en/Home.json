@@ -6,12 +6,11 @@
     "primary": "Download the beta",
     "secondary": "Get started",
     "note": "Free. No subscription. No account required.",
-    "mock": {
-      "source": "Case overview · illustrative example",
-      "sourceText": "Case file 24 — civil dispute",
-      "ref": "Client, hearings and documents in one record",
-      "commentary": "Next action",
-      "commentaryText": "Record the hearing decision, add the next hearing and follow up on preparation."
+    "capture": {
+      "open": "Open the full-size app screenshot in a new tab",
+      "alt": "Legal Masr Today screen showing hearings, tasks and cases with fictional demo data",
+      "caption": "Actual app screenshot · Fictional demo data",
+      "watch": "Watch a case and hearing being added"
     }
   },
   "features": {
@@ -99,5 +98,18 @@
       "linux-rpm": "Download the package, then open it with your software installer. Installation help is available below.",
       "linux-appimage": "Download the AppImage, make it executable, then open it. See installation help for the steps."
     }
+  },
+  "demo": {
+    "badge": "Inside the app",
+    "title": "From a new case to its next hearing.",
+    "description": "Watch the actual workflow: choose a client, save the case details, then schedule a hearing and its preparation.",
+    "videoLabel": "Legal Masr demonstration of adding a case and scheduling its next hearing",
+    "download": "Download the demonstration video",
+    "caption": "Recorded in the v0.2.4 beta with the Arabic interface, without audio. All names, cases and records are fictional.",
+    "steps": [
+      "Choose a client and enter the case details.",
+      "Set the hearing date, time and preparation.",
+      "Review the next hearing in the case record."
+    ]
   }
 }

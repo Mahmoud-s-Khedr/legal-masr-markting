@@ -23,7 +23,9 @@ import useRecommendedDownload from "../hooks/useRecommendedDownload";
 const FEATURE_ICONS = [Briefcase, CalendarDays, Users, Wallet, FileText, Archive];
 
 export default function Home() {
-  const { t } = useTranslation("Home");
+  const { t, i18n } = useTranslation("Home");
+  const screenshotLanguage = i18n.resolvedLanguage?.startsWith("en") ? "en" : "ar";
+  const dashboardImage = `/media/product/dashboard-${screenshotLanguage}.webp`;
 
   const detected = useRecommendedDownload();
   const recommended = downloads.find((item) => item.id === detected);
@@ -93,40 +95,37 @@ export default function Home() {
           <div className="home-product hero-product-reveal">
             <div className="home-product__glow" />
 
-            <div className="home-product__window">
-              <div className="home-product__topbar">
-                <div className="home-product__dots">
-                  <span />
-                  <span />
-                  <span />
-                </div>
-
-                <div className="home-product__address">Legal Masr</div>
-
-                <div />
-              </div>
-
-              <div className="home-product__body">
-                <div className="home-product__sidebar">
-                  <div className="home-product__sidebar-header">
-                    <FileText size={14} />
-                    <span>{t("hero.mock.source")}</span>
-                  </div>
-
-                  <div className="home-product__source">
-                    <strong>{t("hero.mock.sourceText")}</strong>
-                    <span>{t("hero.mock.ref")}</span>
-                  </div>
-
-                  <div className="home-product__source">
-                    <strong>{t("hero.mock.commentary")}</strong>
-                    <span>{t("hero.mock.commentaryText")}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <figure className="home-product__capture">
+              <a className="home-product__preview" href={dashboardImage} target="_blank" rel="noopener noreferrer" aria-label={t("hero.capture.open")}>
+                <img src={dashboardImage} alt={t("hero.capture.alt")} width="1440" height="1100" fetchPriority="high" />
+              </a>
+              <figcaption>
+                <span>{t("hero.capture.caption")}</span>
+                <a href="#product-demo">{t("hero.capture.watch")} <ArrowRight size={15} /></a>
+              </figcaption>
+            </figure>
           </div>
         </div>
+      </section>
+
+      <section id="product-demo" className="home-section home-demo" aria-labelledby="product-demo-title">
+        <div className="home-section__heading">
+          <Badge variant="secondary">{t("demo.badge")}</Badge>
+          <h2 id="product-demo-title">{t("demo.title")}</h2>
+          <p>{t("demo.description")}</p>
+        </div>
+        <figure className="home-demo__figure">
+          <video key={screenshotLanguage} controls playsInline preload="none" poster="/media/product/case-with-hearing-ar.webp" width="1440" height="1000" aria-label={t("demo.videoLabel")} aria-describedby="product-demo-caption">
+            <source src="/media/product/case-to-hearing-ar.mp4" type="video/mp4" />
+            <track kind="captions" src="/media/product/demo-ar.vtt" srcLang="ar" label="العربية" default={screenshotLanguage === "ar"} />
+            <track kind="captions" src="/media/product/demo-en.vtt" srcLang="en" label="English" default={screenshotLanguage === "en"} />
+            <a href="/media/product/case-to-hearing-ar.mp4">{t("demo.download")}</a>
+          </video>
+          <figcaption id="product-demo-caption">{t("demo.caption")}</figcaption>
+        </figure>
+        <ol className="home-demo__steps">
+          {t("demo.steps", { returnObjects: true }).map((step) => <li key={step}>{step}</li>)}
+        </ol>
       </section>
 
       {/* ================= FEATURES ================= */}

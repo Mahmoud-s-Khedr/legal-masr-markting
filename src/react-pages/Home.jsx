@@ -19,13 +19,15 @@ import HeroBackground from "../components/HeroBackground";
 import "./Home.css";
 import { downloads, fileUrl, release } from "../lib/downloads";
 import useRecommendedDownload from "../hooks/useRecommendedDownload";
+import useDarkTheme from "../hooks/useDarkTheme";
 
 const FEATURE_ICONS = [Briefcase, CalendarDays, Users, Wallet, FileText, Archive];
 
 export default function Home() {
   const { t, i18n } = useTranslation("Home");
   const screenshotLanguage = i18n.resolvedLanguage?.startsWith("en") ? "en" : "ar";
-  const dashboardImage = `/media/product/dashboard-${screenshotLanguage}.webp`;
+  const isDarkTheme = useDarkTheme();
+  const dashboardImage = `/media/product/dashboard-${screenshotLanguage}${isDarkTheme ? "-dark" : ""}.webp`;
 
   const detected = useRecommendedDownload();
   const recommended = downloads.find((item) => item.id === detected);

@@ -22,6 +22,10 @@ All assets are in `public/media/product/`:
 - `dashboard-ar.webp`, `dashboard-en.webp`: actual Today view, 1440 × 1100.
   The English screen uses the app's own language switch; fictional record
   names remain in Arabic.
+- `dashboard-ar-dark.webp`, `dashboard-en-dark.webp`: the same demo profile in
+  the app's actual dark theme, selected in Settings → Display and calendar.
+  The hero follows the website's resolved theme, including system preference
+  changes and manual overrides. Its full-size link uses the matching asset.
 - `new-case-ar.webp`: populated new-case form, 1440 × 1000.
 - `schedule-hearing-ar.webp`: populated hearing dialog, 1440 × 1000.
 - `case-with-hearing-ar.webp`: saved case with its next hearing, 1440 × 1000.

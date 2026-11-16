@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   ArrowLeft,
@@ -16,6 +16,7 @@ import { Badge } from "@/components/ui/badge";
 import "./Download.css";
 
 import { downloads as DOWNLOADS, release, fileUrl as releaseFileUrl } from "../lib/downloads";
+import useRecommendedDownload from "../hooks/useRecommendedDownload";
 const VERSION = release.version;
 const RELEASE_DATE = release.date;
 const fileUrl = file => releaseFileUrl(file, import.meta.env.PUBLIC_DOWNLOAD_BASE_URL);
@@ -27,21 +28,6 @@ const GROUP_ICONS = {
   linux: Terminal,
 };
 
-
-/** Returns a download id, "mobile", or null when we can't tell. */
-function detectRecommended() {
-  const ua = navigator.userAgent.toLowerCase();
-
-  if (/android|iphone|ipad|ipod/.test(ua)) return "mobile";
-  if (ua.includes("windows")) return "windows-installer";
-  if (ua.includes("mac")) return null;
-  if (ua.includes("linux") || ua.includes("x11")) {
-    if (/fedora|suse|red hat|centos/.test(ua)) return "linux-rpm";
-    if (/ubuntu|debian|mint/.test(ua)) return "linux-deb";
-    return "linux-appimage";
-  }
-  return null;
-}
 
 function CopyCommand({ command, copyLabel, copiedLabel }) {
   const [copied, setCopied] = useState(false);
@@ -99,9 +85,7 @@ export default function Download() {
   const items = t("items", { returnObjects: true });
   const help = t("help", { returnObjects: true });
 
-  // Detected after mount so server HTML and first client render match.
-  const [detected, setDetected] = useState(null);
-  useEffect(() => setDetected(detectRecommended()), []);
+  const detected = useRecommendedDownload();
 
   const recommended = DOWNLOADS.find((d) => d.id === detected);
 

@@ -83,5 +83,21 @@
     "desc": "Try a more organized working day.",
     "cta": "Choose your download",
     "note": "Windows 10/11 x64 and Linux x64. Unsigned beta packages; macOS is not included. Automatic updates are not available. Begin with sample data and keep a separate backup."
+  },
+  "quickDownload": {
+    "windows-installer": "Download for Windows",
+    "linux-deb": "Download for Ubuntu / Debian",
+    "linux-rpm": "Download for Fedora",
+    "linux-appimage": "Download for Linux",
+    "all": "Other versions and installation help",
+    "recommended": "Suggested for your computer · v{{version}} beta · {{size}} · Unsigned",
+    "mobile": "Legal Masr runs on a computer. Open this website on your Windows or Linux computer to download it.",
+    "unsupported": "Available for Windows and Linux computers. Choose a version on the downloads page.",
+    "instructions": {
+      "windows-installer": "Download, open the setup file, and follow the installation steps.",
+      "linux-deb": "Download the package, then open it with your software installer. Installation help is available below.",
+      "linux-rpm": "Download the package, then open it with your software installer. Installation help is available below.",
+      "linux-appimage": "Download the AppImage, make it executable, then open it. See installation help for the steps."
+    }
   }
 }

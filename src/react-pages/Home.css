@@ -135,6 +135,7 @@
   align-items: center;
   gap: 10px;
   margin-top: 34px;
+  flex-wrap: wrap;
 }
 
 .home-hero__actions a {
@@ -1173,3 +1174,22 @@
 .reveal { opacity: 1; transform: none; }
 /* The case example remains visible at narrow laptop and phone widths. */
 .home-product__sidebar { display: block; border-inline-start: 0; }
+
+.home-quick-download {
+  margin-top: 16px;
+  max-width: 560px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.home-quick-download p {
+  margin: 0 0 6px;
+}
+
+.home-quick-download a,
+.home-download__content > p a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

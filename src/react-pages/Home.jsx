@@ -17,11 +17,23 @@ import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import HeroBackground from "../components/HeroBackground";
 import "./Home.css";
+import { downloads, fileUrl, release } from "../lib/downloads";
+import useRecommendedDownload from "../hooks/useRecommendedDownload";
 
 const FEATURE_ICONS = [Briefcase, CalendarDays, Users, Wallet, FileText, Archive];
 
 export default function Home() {
   const { t } = useTranslation("Home");
+
+  const detected = useRecommendedDownload();
+  const recommended = downloads.find((item) => item.id === detected);
+  const downloadHref = recommended
+    ? fileUrl(recommended.file, import.meta.env.PUBLIC_DOWNLOAD_BASE_URL)
+    : "/download";
+  const downloadLabel = recommended ? t(`quickDownload.${recommended.id}`) : t("hero.primary");
+  const downloadHint = recommended
+    ? t(`quickDownload.instructions.${recommended.id}`)
+    : t(detected === "mobile" ? "quickDownload.mobile" : "quickDownload.unsupported");
 
   const features = t("features.items", { returnObjects: true });
   const steps = t("guide.steps", { returnObjects: true });
@@ -50,9 +62,9 @@ export default function Home() {
             </p>
 
             <div className="home-hero__actions hero-reveal hero-reveal--4">
-              <a className={buttonVariants({size: "lg"})} href="/download">
+              <a className={buttonVariants({size: "lg"})} href={downloadHref}>
                   <Download size={18} />
-                  {t("hero.primary")}
+                  {downloadLabel}
                   <ArrowRight size={17} />
                 </a>
 
@@ -60,6 +72,12 @@ export default function Home() {
                   {t("hero.secondary")}
                   <ArrowRight size={17} />
                 </a>
+            </div>
+
+            <div className="home-quick-download hero-reveal hero-reveal--5" aria-live="polite">
+              <p>{downloadHint}</p>
+              {recommended && <p>{t("quickDownload.recommended", { version: release.version, size: recommended.size })}</p>}
+              <a href="/download">{t("quickDownload.all")}</a>
             </div>
 
             <div className="home-hero__trust hero-reveal hero-reveal--5">
@@ -230,12 +248,13 @@ export default function Home() {
           <h2>{t("download.desc")}</h2>
 
           <div className="home-download__buttons">
-            <a href="/download" className="home-download__button rounded-4xl">
+            <a href={downloadHref} className="home-download__button rounded-4xl">
               <Download size={18} />
-              {t("download.cta")}
+              {recommended ? downloadLabel : t("download.cta")}
             </a>
           </div>
 
+          <p>{downloadHint} <a href="/download">{t("quickDownload.all")}</a></p>
           <p>{t("download.note")}</p>
         </div>
       </section>

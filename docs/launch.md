@@ -93,9 +93,10 @@ pre-release acceptance and checksum callouts are removed from the download page.
 
 The site discloses unsigned packages, manual updates and unencrypted exports.
 It does not claim completed physical-platform or cross-device restore acceptance.
-The support page explains browser preferences, hosting connection metadata and
-that the app does not automatically submit reports. No embedded Google Form,
-analytics or telemetry is added. This factual copy is not an approved legal
+The feedback page embeds the original Google Form and provides a link to open
+it separately. It explains that submitted information is sent to Google Forms,
+and describes browser preferences and hosting connection metadata. No analytics
+or telemetry is added. This factual copy is not an approved legal
 privacy notice or terms of use.
 
 ## Gates before broader production use
